@@ -1,6 +1,7 @@
 package ObjectsAndClasses.Traits
 
 //YIKES THIS ONE WAS A BIG FAIL , BETTER LUCK NEXT TIME.
+//THIS CODE IS EXCESSIVELY OVER ENGINEERED
 object SealedTraits extends App{
 
   sealed trait Shape {
