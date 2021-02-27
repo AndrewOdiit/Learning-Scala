@@ -54,4 +54,6 @@ object JSON extends App{
 
   println(SeqCell(StringValue("a string"),SeqCell(NumberValue(1.0),SeqCell(BooleanValue(true),SeqEnd))).print)
   println(ObjectCell("a",SeqCell(StringValue("a string"),SeqCell(NumberValue(1.0),SeqCell(BooleanValue(true),SeqEnd)))).print())
+  //"c": { "doh":true, "ray":false, "me":1 } won't work here
+  //println(ObjectCell("a",SeqCell(StringValue("a string"),SeqCell(NumberValue(1.0),SeqCell(BooleanValue(true),SeqEnd)))).print())
 }
