@@ -8,12 +8,12 @@ object Functions extends App {
     }
 
     def product: Int =  fold[Int](1, (hd, tl) => hd * tl)
-    def sum: Int = fold[Int](0, (hd, tl) => (hd + tl))
+    def sum: Int = fold[Int](0, (hd, tl) => hd + tl)
 
-    def fold[A](n: A, fn:(Int, A)=>A): A ={
+    def fold[A](end: A, fn:(Int, A)=>A): A ={
       this match {
-        case End =>n
-        case Pair(hd, tl) => fn(hd, tl.fold(n, fn))
+        case End =>end
+        case Pair(hd, tl) => fn(hd, tl.fold(end, fn))
       }
     }
   }
