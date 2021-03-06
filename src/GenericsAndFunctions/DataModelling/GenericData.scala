@@ -8,7 +8,15 @@ object GenericData  extends App {
   //println(pair.a, pair.b)
 
   //sum type generic pattern
-  sealed trait SumType[A, B]
+  sealed trait SumType[A, B]{
+    def fold[C](left: A=>C, right:B => C): C ={
+      this match {
+        case Left(value) => left(value)
+        case Right(value) => right(value)
+      }
+
+    }
+  }
 
   final case class Left[A, B](value:A) extends SumType[A, B]
   final case class Right[A, B](value:B) extends  SumType[A,B]
